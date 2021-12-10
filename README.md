@@ -1,3 +1,19 @@
+## dgerin notes
+[NOTES]
+. onnx frontend seems to be worging only with python package
+  , so the python package buildSytem need to work.
+
+
+[TODO]
+. test builded egg python package
+
+[DONE]
+with few modif (not understood) :
+. able to compile with cmake on native laptop
+. not able to compile under docker because fetchContent doesn t work under docker !
+. (done by forcing cmakeCache to avoid recompile all), but able to compile python egg (cd build && ninja python)
+
+
 nGraph has moved to OpenVINO: https://github.com/openvinotoolkit/openvino
 
 ![nGraph Compiler stack](doc/sphinx/source/graphics/ngraph_header.png)

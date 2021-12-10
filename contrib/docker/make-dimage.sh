@@ -78,7 +78,7 @@ docker build  --rm=true \
        -t="${DIMAGE_ID}" \
        ${CONTEXT}
 
-docker tag  "${DIMAGE_ID}"  "${DIMAGE_NAME}:latest"
+#docker tag  "${DIMAGE_ID}"  "${DIMAGE_NAME}:latest"
 
 echo ' '
 echo 'Docker image build completed'

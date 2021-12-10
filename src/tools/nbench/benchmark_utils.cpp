@@ -68,12 +68,14 @@ void init_int_tensor<uint8_t>(shared_ptr<runtime::Tensor> tensor, uint8_t min, u
     tensor->write(vec.data(), vec.size() * sizeof(uint8_t));
 }
 
+#define _MM_FLUSH_ZERO_ON 0x8000
+#define _MM_DENORMALS_ZERO_ON 0
 void set_denormals_flush_to_zero()
 {
 #if defined(__x86_64__) || defined(__amd64__)
     // Avoids perf impact from denormals while benchmarking with random data
     _MM_SET_FLUSH_ZERO_MODE(_MM_FLUSH_ZERO_ON);
-    _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
+    // _MM_SET_DENORMALS_ZERO_MODE(_MM_DENORMALS_ZERO_ON);
 #endif
 }
 
